@@ -8,27 +8,30 @@ class App extends Component {
     this.state = {number: 0}
   }
   changeState = () => {
-      this.setState( {number: this.state.number + 1}
-      );
+       this.setState( {number: this.state.number + 1}  );
     }
-  less = () => {
-      this.setState({number: this.state.number -1});
-    }
-  getNumber = (curNum) => {return !curNum ? "original" : curNum % 2 === 0 ? "even" : '' } //ES6 if,  else if, else
 
-  resetState = () => {
-    this.setState({number: 0});
-  }
+  less = () => {
+   if (this.state.number > 0) {
+      this.setState({number: this.state.number -1});
+      }
+    }
+
+  getNumber = (curNum) => {
+    return curNum % 2 === 0 && curNum % 5 === 0 && curNum !==0 ? 'pink' : !curNum ? "original" : curNum % 2 === 0 ? "odd" : 'even';
+  } //ES6 if,  else if, else
+
   render() {
     return (
       <div>
         <h1>Click on circle</h1>
-        <div className={"cyrcle " + this.getNumber(this.state.number)} onClick={this.changeState}>
+        <div className={"cyrcle " + this.getNumber(this.state.number)} >
           <h1>{this.state.number}</h1>
         </div>
         <div className="reset">
-          <button className="butt"  onClick={this.resetState}>Reset</button><br></br>
-          <button className="buttLess" onClick={this.less}>Decrease</button>
+          <button className="butt"  onClick={this.changeState}>Add</button>
+          <button className="butt"  onClick={() => this.setState({number: 0})}>Reset</button>
+          <button className="butt" onClick={this.less}>Decrease</button>
         </div>
         <div className="madeInReact">
           <img src={react} alt="Made in React" />

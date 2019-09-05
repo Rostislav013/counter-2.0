@@ -3,6 +3,7 @@
   text-align: center;
   padding-top: 50px;
 }
+
 .cyrcle h1 {
   text-align: center;
   color: black;
@@ -17,23 +18,32 @@
   transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
-  background-color: lightgreen;
   border-radius: 100px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; /*disable text selector*/
-
 }
+
+.cyrcle.odd {
+  background-color: #00ff00;
+}
+.cyrcle.pink {
+  background-color: pink;
+}
+
 .cyrcle:hover {
   cursor: context-menu; /*to change pointer*/
 }
+
 .cyrcle.even {
     background-color: #00FFFF;
   }
+
 .cyrcle.original {
     background-color: black;
   }
+
 .reset {
   position: absolute;
   top: 65%;
@@ -46,10 +56,15 @@
   right: 0;
 }
  
-.buttLess {
+.butt {
+  border: none;
+  outline: none;
   margin-left: 20px;
   margin-top: 20px;
+  width: 120px;
+  font-size: 18px;
+  padding: 15px;
 }
-.butt {
-  margin-left: 30px;
+.butt:active {
+  background-color: burlywood;
 }
