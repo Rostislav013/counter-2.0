@@ -11,15 +11,22 @@ class App extends Component {
        this.setState( {number: this.state.number + 1}  );
     }
 
-  less = () => {
+  /*less = () => {
    if (this.state.number > 0) {
       this.setState({number: this.state.number -1});
       }
-    }
+    }*/
 
-  getNumber = (curNum) => {
-    return curNum % 2 === 0 && curNum % 5 === 0 && curNum !==0 ? 'pink' : !curNum ? "original" : curNum % 2 === 0 ? "odd" : 'even';
-  } //ES6 if,  else if, else
+    less = () => {
+      this.setState(prevState => 
+          ({number: prevState.number ? prevState.number-1: 0})
+      )
+       }
+
+
+
+
+  getNumber = (curNum) => {return curNum % 2 === 0 && curNum % 5 === 0 && curNum !==0 ? 'pink' : !curNum  ? "original" : curNum % 2 === 0 ? "odd" : 'even';} //ES6 if,  else if, else
 
   render() {
     return (

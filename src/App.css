@@ -10,6 +10,9 @@
   padding-top: 20px;
   font-size: 54px;
 }
+.cyrcle.original h1, .cyrcle.pink h1 {
+  color: white;
+}
 
 .cyrcle {
   position: absolute;
@@ -41,6 +44,7 @@
   }
 
 .cyrcle.original {
+  
     background-color: black;
   }
 
@@ -62,8 +66,9 @@
   margin-left: 20px;
   margin-top: 20px;
   width: 120px;
-  font-size: 18px;
+  font-size: 20px;
   padding: 15px;
+  border-radius: 20px;
 }
 .butt:active {
   background-color: burlywood;
