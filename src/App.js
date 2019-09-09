@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; //for class type of components
 import './App.css';
 import react from './react.png';
+//import Hookit from './Hookit.js';
 
 class App extends Component {
   constructor(props) {
@@ -18,13 +19,13 @@ class App extends Component {
     }*/
 
     less = () => {
-      this.setState(prevState => 
+      this.setState(prevState =>
           ({number: prevState.number ? prevState.number-1: 0})
       )
        }
 
  // getNumber = (curNum) => {return curNum % 2 === 0 && curNum % 5 === 0 && curNum !==0 ? 'pink' : !curNum  ? "original" : curNum % 2 === 0 ? "odd" : 'even';} //ES6 if,  else if, else
-  
+
  getNumber = (curNum) => {return curNum % 10 === 0 && curNum !==0 ? 'pink' : !curNum  ? "original" : curNum % 2 === 0 ? "odd" : 'even';} //ES6 if,  else if, else
   render() {
     return (
@@ -38,9 +39,11 @@ class App extends Component {
           <button className="butt"  onClick={() => this.setState({number: 0})}>Reset</button>
           <button className="butt" onClick={this.less}>Decrease</button>
         </div>
+      
         <div className="madeInReact">
           <img src={react} alt="Made in React" />
         </div>
+
       </div>
     );
   }
